@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Weedoš</title>
+</head>
+<body>
+
+<h1>Weed</h1>
+<p id="time"></p>
+<img id="img" src="image.png">
+<script>
+    var myVar = setInterval(update, 1000);
+
+    function update() {
+        document.getElementById("img").src = "http://kuba-test.borec.cz/cameraServer/image.png?" + (new Date()).getTime();
+        var d = new Date();
+        document.getElementById("time").innerHTML = d.toLocaleTimeString();
+    }
+</script>
+
+</body>
+</html>
