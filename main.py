@@ -11,7 +11,10 @@ while True:
     try:
         print("Taking picture...")
         camera.capture('image.png')
-
+    except Exception as e:
+        print(e)
+        
+    try:
         print("Posting picture...")
         url = "http://kuba-test.borec.cz/cameraServer/upload.php"
         files = {'file': open('image.png', 'rb')}
