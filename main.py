@@ -4,7 +4,7 @@ from time import sleep
 
 camera = PiCamera()
 camera.resolution = (2592, 1944)
-camera.rotation = 180
+camera.rotation = 0
 
 print("Starting...")
 while True:
