@@ -1,12 +1,14 @@
 import requests
 from picamera import PiCamera
 from time import sleep
+import time
 
 camera = PiCamera()
 camera.resolution = (1920, 1080)
 camera.rotation = 180
 
 print("Starting...")
+tm = time.time()
 while True:
     try:
         print("Taking picture...")
@@ -16,7 +18,12 @@ while True:
         
     try:
         print("Posting picture...")
-        url = "http://kuba-test.borec.cz/cameraServer/upload.php"
+        if (time.time() - tm > 3600000):
+            url = "http://kuba-test.borec.cz/cameraServer/upload.php?save=1"
+            tm = time.time()
+        else: 
+            url = "http://kuba-test.borec.cz/cameraServer/upload.php?save=0"
+
         files = {'file': open('image.png', 'rb')}
         r = requests.post(url, files=files)
 
