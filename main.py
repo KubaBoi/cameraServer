@@ -21,6 +21,7 @@ while True:
         if (time.time() - tm - 3650000 <= -3600000):
             url = "http://kuba-test.borec.cz/cameraServer/upload.php?save=1"
             tm = time.time()
+            print("Image will be saved.")
         else: 
             url = "http://kuba-test.borec.cz/cameraServer/upload.php?save=0"
 
