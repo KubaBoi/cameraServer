@@ -8,7 +8,7 @@ camera.resolution = (1920, 1080)
 camera.rotation = 180
 
 print("Starting...")
-tm = time.time() + 120
+tm = time.time() - 3600
 while True:
     try:
         print("Taking picture...")
