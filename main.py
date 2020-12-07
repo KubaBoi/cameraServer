@@ -18,6 +18,7 @@ while True:
         
     try:
         print("Posting picture...")
+        print(time.time() - tm - 3650)
         if (time.time() - tm - 3650 <= -3600):
             url = "http://kuba-test.borec.cz/cameraServer/upload.php?save=1"
             tm = time.time()
