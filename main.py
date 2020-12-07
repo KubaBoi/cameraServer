@@ -8,7 +8,7 @@ camera.resolution = (1920, 1080)
 camera.rotation = 180
 
 print("Starting...")
-tm = time.time()
+tm = time.time() + 120
 while True:
     try:
         print("Taking picture...")
@@ -18,8 +18,7 @@ while True:
         
     try:
         print("Posting picture...")
-        print(time.time() - tm - 3600)
-        if (time.time() - tm - 3600 <= -3650):
+        if (time.time() - tm > 3600):
             url = "http://kuba-test.borec.cz/cameraServer/upload.php?save=1"
             tm = time.time()
             print("Image will be saved.")
